@@ -28,6 +28,52 @@ Pipeline complet de système de recommandation pour H&M utilisant LightFM avec o
 - Sparsité: ~99.95%
 - Échantillonnage intelligent: utilisateurs actifs (≥5) + articles populaires (≥10)
 
+### 📥 Téléchargement des Données
+
+| Fichier | Description | Lien de Téléchargement |
+|---------|-------------|------------------------|
+| **articles.csv** | Métadonnées des produits (catégorie, couleur, prix, etc.) | [📁 Télécharger](https://drive.google.com/file/d/1S1MlBGTf3kB5HCz61uAsCij7OwaByP7_/view?usp=drive_link) |
+| **customers.csv** | Informations démographiques des clients | [📁 Télécharger](https://drive.google.com/file/d/1hbj7RreMizmNXXfjMXEDJpTG8wJasmHy/view?usp=drive_link) |
+| **transactions.csv** | Historique d'achats des clients | [📁 Télécharger](https://drive.google.com/file/d/1hbj7RreMizmNXXfjMXEDJpTG8wJasmHy/view?usp=drive_link) |
+
+**📋 Instructions :**
+1. Télécharger les 3 fichiers CSV depuis les liens ci-dessus
+2. Placer dans le dossier `data/` de votre Google Drive : `/content/drive/MyDrive/PSL/00-RecommanderSystem/h2m-recsys/data/`
+3. Exécuter le notebook `00_setup_and_data_loading.ipynb` pour charger les données
+
+## 📂 Structure du Projet
+
+```
+hm-fashion-recommendation-pipeline/
+│
+├── 📓 notebooks/                               # Notebooks Jupyter
+│   ├── 00_setup_and_data_loading.ipynb       # Configuration & chargement
+│   ├── 01_Exploration_Donnees.ipynb          # Analyse exploratoire
+│   ├── 02_Echantillonnage_Donnees.ipynb      # Stratégies échantillonnage
+│   ├── 03_Preparation_Donnees.ipynb          # Preprocessing LightFM
+│   ├── 04_Modele_Collaboratif.ipynb          # Modèle collaboratif
+│   ├── 05_Optimisation_Hyperparametres.ipynb # Tuning hyperparamètres
+│   ├── 06_Evaluation_Modele.ipynb            # Évaluation approfondie
+│   ├── 07_Modele_Hybride.ipynb               # Modèle hybride
+│   ├── 08_Pipeline_Final.ipynb               # Pipeline complet & démo
+│   ├── Complete_H&M_RS_Pipeline.ipynb        # Pipeline unifié
+│   └── QuickStart_H&M_RS_Pipeline.ipynb      # Version accélérée
+│
+├── 📁 data/                                   # Données (vide - voir instructions)
+│   └── .gitkeep
+│
+├── 📁 outputs/                                # Résultats générés
+│   ├── figures/                              # Visualisations
+│   ├── models/                               # Modèles sauvegardés
+│   └── .gitkeep
+│
+├── 📁 docs/                                   # Documentation
+│
+├── 📄 requirements.txt                        # Dépendances Python
+├── 📖 README.md                              # Documentation principale
+└── .gitignore                                # Fichiers Git ignorés
+```
+
 ## 🚀 Installation
 
 ```bash
@@ -45,11 +91,16 @@ cd hm-fashion-recommendation-pipeline
 **Google Colab - Exécuter dans l'ordre :**
 
 ```python
-# Configuration des chemins (identique dans tous notebooks)
-BASE_PATH = "/content/drive/MyDrive/PSL/00-RecommanderSystem/h2m-recsys"
+# ⚠️ IMPORTANT: Personnaliser ces chemins selon votre Google Drive
+BASE_PATH = "/content/drive/MyDrive/VOTRE_DOSSIER/h2m-recsys"  # À MODIFIER
 DATA_PATH = f"{BASE_PATH}/data"
 OUTPUTS_PATH = f"{BASE_PATH}/outputs"
 ```
+
+**📋 Configuration initiale :**
+1. **Créer dossier** dans votre Google Drive (ex: `/MonDossier/h2m-recsys/`)
+2. **Modifier BASE_PATH** dans chaque notebook avec votre chemin
+3. **Télécharger données** dans le sous-dossier `data/`
 
 1. **00_setup_and_data_loading** → Configuration & chargement
 2. **01_Exploration_Donnees** → Analyse dataset
