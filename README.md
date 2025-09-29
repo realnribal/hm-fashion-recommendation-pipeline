@@ -20,7 +20,18 @@ Pipeline complet de système de recommandation pour H&M utilisant LightFM avec o
 └── 🎯 08_Pipeline_Final               # Pipeline complet & démo
 ```
 
-## 📊 Dataset
+## � Installation & Configuration
+
+```bash
+# 1. Clone du repository
+git clone https://github.com/realnribal/hm-fashion-recommendation-pipeline.git
+
+# 2. Google Colab - Installation automatique dans chaque notebook
+!pip install git+https://github.com/daviddavo/lightfm
+!pip install -q tqdm pandas numpy scipy scikit-learn matplotlib seaborn
+```
+
+## �📊 Dataset
 
 **H&M Personalized Fashion Recommendations**
 - 31M+ transactions (2018-2020)
@@ -75,20 +86,27 @@ hm-fashion-recommendation-pipeline/
 └── .gitignore                                # Fichiers Git ignorés
 ```
 
-## 🚀 Installation & Configuration
+## ⚡ QuickStart - Versions Alternatives
 
-```bash
-# 1. Clone du repository
-git clone https://github.com/realnribal/hm-fashion-recommendation-pipeline.git
+Pour différents besoins et contraintes de temps :
 
-# 2. Google Colab - Installation automatique dans chaque notebook
-!pip install git+https://github.com/daviddavo/lightfm
-!pip install -q tqdm pandas numpy scipy scikit-learn matplotlib seaborn
-```
+### 🚀 **QuickStart_H&M_RS_Pipeline.ipynb**
+**Pipeline rapide pour démonstration**
+- ⏱️ **Temps d'exécution** : ~15-30 minutes  
+- 📊 **Échantillon réduit** : Dataset minimal pour tests
+- 🎯 **Objectif** : Démonstration rapide bout-en-bout
+- ✅ **Idéal pour** : Premiers tests, validation concept, démonstrations
 
-## 📖 Utilisation
+### 📈 **Complete_H&M_RS_Pipeline.ipynb**  
+**Pipeline complet unifié**
+- ⏱️ **Temps d'exécution** : ~2-4 heures
+- 📊 **Dataset complet** : Échantillons larges et optimisations poussées
+- 🎯 **Objectif** : Résultats de recherche complets
+- ✅ **Idéal pour** : Recherche approfondie, résultats finaux, publications
 
-**Google Colab - Exécuter dans l'ordre :**
+## 📖 Utilisation Détaillée
+
+**Google Colab - Configuration :**
 
 ```python
 # ⚠️ IMPORTANT: Personnaliser ces chemins selon votre Google Drive
@@ -97,13 +115,12 @@ DATA_PATH = f"{BASE_PATH}/data"
 OUTPUTS_PATH = f"{BASE_PATH}/outputs"
 ```
 
-**📋 Configuration initiale :**
-1. **Monter Google Drive** dans Colab : `drive.mount('/content/drive')`
-2. **Modifier BASE_PATH** dans chaque notebook avec votre chemin
-3. **Exécuter notebooks** dans l'ordre numéroté (00 → 08)
+**📋 Étapes de configuration :**
+1. **Monter Google Drive** : `drive.mount('/content/drive')`
+2. **Modifier BASE_PATH** dans chaque notebook
+3. **Exécuter dans l'ordre** : 00 → 08 ou utiliser QuickStart/Complete
 
-**🔢 Ordre d'exécution :**
-
+**🔢 Pipeline détaillé (00 → 08) :**
 1. **00_setup_and_data_loading** → Configuration & chargement
 2. **01_Exploration_Donnees** → Analyse dataset
 3. **02_Echantillonnage_Donnees** → Sélection échantillons optimaux
