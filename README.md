@@ -38,8 +38,9 @@ Pipeline complet de système de recommandation pour H&M utilisant LightFM avec o
 
 **📋 Instructions :**
 1. Télécharger les 3 fichiers CSV depuis les liens ci-dessus
-2. Placer dans le dossier `data/` de votre Google Drive : `/content/drive/MyDrive/PSL/00-RecommanderSystem/h2m-recsys/data/`
-3. Exécuter le notebook `00_setup_and_data_loading.ipynb` pour charger les données
+2. Créer dossier dans votre Google Drive (ex: `/MonDossier/h2m-recsys/`)
+3. Placer les fichiers dans le sous-dossier `data/`
+4. Modifier le `BASE_PATH` dans les notebooks avec votre chemin personnel
 
 ## 📂 Structure du Projet
 
@@ -59,10 +60,10 @@ hm-fashion-recommendation-pipeline/
 │   ├── Complete_H&M_RS_Pipeline.ipynb        # Pipeline unifié
 │   └── QuickStart_H&M_RS_Pipeline.ipynb      # Version accélérée
 │
-├── 📁 data/                                   # Données (vide - voir instructions)
+├── 📁 data/                                   # Données H&M (à télécharger)
 │   └── .gitkeep
 │
-├── 📁 outputs/                                # Résultats générés
+├── 📁 outputs/                                # Résultats générés automatiquement
 │   ├── figures/                              # Visualisations
 │   ├── models/                               # Modèles sauvegardés
 │   └── .gitkeep
@@ -74,14 +75,13 @@ hm-fashion-recommendation-pipeline/
 └── .gitignore                                # Fichiers Git ignorés
 ```
 
-## 🚀 Installation
+## 🚀 Installation & Configuration
 
 ```bash
-# Clone
+# 1. Clone du repository
 git clone https://github.com/realnribal/hm-fashion-recommendation-pipeline.git
-cd hm-fashion-recommendation-pipeline
 
-# Google Colab (recommandé)
+# 2. Google Colab - Installation automatique dans chaque notebook
 !pip install git+https://github.com/daviddavo/lightfm
 !pip install -q tqdm pandas numpy scipy scikit-learn matplotlib seaborn
 ```
@@ -98,9 +98,11 @@ OUTPUTS_PATH = f"{BASE_PATH}/outputs"
 ```
 
 **📋 Configuration initiale :**
-1. **Créer dossier** dans votre Google Drive (ex: `/MonDossier/h2m-recsys/`)
+1. **Monter Google Drive** dans Colab : `drive.mount('/content/drive')`
 2. **Modifier BASE_PATH** dans chaque notebook avec votre chemin
-3. **Télécharger données** dans le sous-dossier `data/`
+3. **Exécuter notebooks** dans l'ordre numéroté (00 → 08)
+
+**🔢 Ordre d'exécution :**
 
 1. **00_setup_and_data_loading** → Configuration & chargement
 2. **01_Exploration_Donnees** → Analyse dataset
